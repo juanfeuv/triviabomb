@@ -1,0 +1,224 @@
+@media (max-width: 700px){
+	body{
+		font-family: Arial;
+		background-color: #3CB371;
+	}
+	img{
+		position: absolute;
+		width: 100%;
+		left: 0%;
+		height: 35%;
+		top: 0%;
+		border-radius: 10px;
+	}
+	header{
+		background-color: none;
+		width: 100%;
+		left: 0%;
+		height: 65%;
+		bottom: 0%;
+		position: absolute;
+	}
+	#instruction{
+		top: 0%;
+		left: 10%;
+		right: 10%;
+		width: 80%;
+		position: absolute;
+		text-align: center;
+		color: #008080;
+		text-decoration-style: solid;
+		font-size: 2em;
+		font-weight: 900;
+	}
+	#username{		
+		top: 33.3%;
+		height: 33.3%;
+		position: absolute;
+		width: 100%;
+		left: 0%;
+	}
+	#username input{
+		top: 25%;
+		width: 60%;
+		bottom: 25%;
+		border-radius: 10px;
+		height: 50%;
+		font-size: 1.5em;
+		text-align: center;
+		border-style: none;
+		display: block;
+		margin: 0 auto;
+	}
+	#submit{
+		top: 66.6%;
+		height: 33.3%;
+		position: absolute;
+		text-align: center;
+		width: 100%;
+		left: 0%;	
+	}
+	#submit input{
+		height: 50%;
+		width: 60%;
+		border-radius: 10px;
+		background-color: #f44336;
+		top: 25%;
+		bottom: 25%;
+		display: block;
+		margin: 0 auto;
+		font-size: 1.5em;
+	}
+} 
+
+@media (min-width: 701px) and (max-width: 900px) {
+	body{
+		font-family: Arial;
+		background-color: #3CB371;
+	}
+	img{
+		position: absolute;
+		width: 40%;
+		left: 5%;
+		height: 40%;
+		top: 5%;
+		border-radius: 10px;
+	}
+	header{
+		background-color: none;
+		width: 60%;
+		right: 0%;
+		height: 60%;
+		bottom: 0%;
+		position: absolute;
+	}
+	#instruction{
+		top: 0%;
+		width: 80%;
+		left: 10%;
+		height: 33.3%;
+		position: absolute;
+		text-align: center;
+		color: #008080;
+		text-decoration-style: solid;
+		font-size: 2em;
+		font-weight: 900;
+	}
+	#username{		
+		top: 33.3%;
+		height: 33.3%;
+		position: absolute;
+		text-align: center;
+		left: 0%;
+		width: 100%;
+	}
+	#username input{
+		top: 25%;
+		bottom: 25%;
+		border-radius: 10px;
+		height: 50%;
+		font-size: 1.5em;
+		text-align: center;
+		border-style: none;
+		width: 60%;
+		display: block;
+		margin: 0 auto;
+		font-size: 1.5em;
+	}
+	#submit{
+		top: 66.6%;
+		height: 33.3%;
+		position: absolute;
+		left: 0%;
+		width: 100%;
+	}
+	#submit input{
+		height: 50%;
+		width: 60%;
+		border-radius: 10px;
+		background-color: #f44336;
+		text-align: center;
+		top: 25%;
+		bottom: 25%;
+		display: block;
+		margin: 0 auto;
+		font-size: 1.5em;
+	}
+} 
+
+
+@media only screen and (min-width: 901px) {
+	body{
+		font-family: Arial;
+		background-color: #3CB371;
+	}
+	img{
+		position: absolute;
+		height: 50%;
+		top: 25%;
+		width: 25%;
+		left: 5%;
+		border-radius: 10px;
+	}
+	header{
+		background-color: none;
+		width: 65%;
+		right: 5%;
+		height: 70%;
+		top: 15%;
+		position: absolute;
+	}
+	#instruction{
+		top: 0%;
+		height: 33.3%;
+		width: 100%;
+		left: 0%;
+		position: absolute;
+		text-align: center;
+		color: #008080;
+		text-decoration-style: solid;
+		font-size: 2em;
+		font-weight: 900;
+	}
+	#username{		
+		top: 33.3%;
+		height: 33.3%;
+		position: absolute;
+		text-align: center;
+		width: 100%;
+		left: 0%;
+	}
+	#username input{
+		top: 25%;
+		bottom: 25%;
+		border-radius: 10px;
+		height: 50%;
+		font-size: 1.5em;
+		text-align: center;
+		border-style: none;
+		width: 60%;
+		display: block;
+		margin: 0 auto;
+		font-size: 1.5em;
+	}
+	#submit{
+		top: 66.6%;
+		height: 33.3%;
+		position: absolute;
+		text-align: center;
+		left: 0%;
+		width: 100%;
+
+	}
+	#submit input{
+		width: 60%;
+		border-radius: 10px;
+		background-color: #f44336;
+		top: 25%;
+		height: 50%;
+		bottom: 25%;
+		display: block;
+		margin: 0 auto;
+		font-size: 1.5em;
+	}
+}

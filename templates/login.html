@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TriviaBomb: login</title>
+    <link href="../login.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="icon" type="image/PNG" href="../icono.PNG">
+    <script src="socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+
+        function enviarUsuario() {
+            var element = document.getElementById('_username').value;
+            socket.emit('username', element);
+        }
+        socket.on('comprobacion', res => {
+            if (res) {
+                document.getElementById('comprobar').style.color = 'green';
+                document.getElementById('comprobar').innerHTML = 'Usuario no Existente :)';
+            } else {
+                document.getElementById('comprobar').style.color = 'red';
+                document.getElementById('comprobar').innerHTML = 'Usuario ya Existente :(';
+                console.log('Usuario ya Existente :(');
+            }
+        });
+
+        //on escuhar
+        socket.on('connect', () => {
+            console.log('conectado');
+        });
+        socket.on('disconnect', () => {
+            console.log('desconectado');
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <form method="POST" action="/lobby">
+            <div id="instruction">INGRESA TU NOMBRE PARA JUGAR</div>
+            <div id="username"><input type="text" name="username" id="_username" oninput="enviarUsuario()" placeholder="Ejemplo: Andrea19" autofocus required></div>
+            <div id="submit">
+                <input type="submit" value="Registrar">
+                <div id="comprobar"></div>
+            </div>
+        </form>
+    </header>
+    <img src="../logo.png">
+</body>
+
+</html>
