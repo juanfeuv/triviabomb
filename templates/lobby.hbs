@@ -12,22 +12,15 @@
     <script>
         var socket = io();
         socket.on('users', users => {
-            document.getElementById('list_users').innerHTML = users;
+            document.getElementById('list').innerHTML = users;
         });
         
         function ready() {
-            console.log('ready');
             socket.emit('changeStatus', {
                 status: true,
                 username: `{{name}}`
             });
         }
-
-        //http-request
-        var xhttp = new XMLHttpRequest();
-        xhttp.open("POST", "/inicio", true);
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("name={{name}}");
     </script>
 </head>
 
@@ -35,13 +28,13 @@
     <header>
         <h1>Bienvenido {{name}}</h1>
         <h2>Sala de Espera</h2>
-        <div id="ready_checkbox" onclick="ready()">Estoy listo!!</div>
+        <div id="ready_checkbox" onclick="ready()">Estoy listo (Presiona aquí cuando estes listo para iniciar)!!</div>
     </header>
-    <main>
-        <ul id="list_users">
-        </ul>
+    <main id="list">
     </main>
-
+    <footer>
+        <a href="/inicio?name={{name}}">Ir al juego</a>
+    </footer>
 </body>
 
 </html>

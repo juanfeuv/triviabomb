@@ -9,6 +9,8 @@
   "author": "Juan Felipe Usuga Villegas",
   "license": "ISC",
   "dependencies": {
-    "express-handlebars": "^3.0.0"
+    "express-handlebars": "^3.0.0",
+    "file-system": "^2.2.2",
+    "mongoose": "^5.4.0"
   }
 }

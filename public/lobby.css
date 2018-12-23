@@ -3,17 +3,22 @@
         background-color: chocolate;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
-    li {
-        background-color: aqua;
-        list-style: none;
-        margin: 0 auto;
+    .users_list {
+        position: initial;
+        width: 90%;
         display: block;
+        margin: 0 auto;
+        background-color: aqua;
         border-radius: 5px;
         border-color: tomato;
         border-style: solid;
     }
     #ready_checkbox {
         background-color: darkorange;
+        display: block;
+        margin: 0 auto;
+        width: 90%;
+        text-align: center;
     }
     #ready_checkbox:hover {
         background-color: coral;
@@ -25,11 +30,12 @@
         background-color: chocolate;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
-    li {
-        background-color: aqua;
-        list-style: none;
-        margin: 0 auto;
+    .users_list {
+        position: initial;
+        width: 90%;
         display: block;
+        margin: 0 auto;
+        background-color: aqua;
         border-radius: 5px;
         border-color: tomato;
         border-style: solid;
@@ -47,11 +53,12 @@
         background-color: chocolate;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
-    li {
-        background-color: aqua;
-        list-style: none;
-        margin: 0 auto;
+    .users_list {
+        position: initial;
+        width: 90%;
         display: block;
+        margin: 0 auto;
+        background-color: aqua;
         border-radius: 5px;
         border-color: tomato;
         border-style: solid;

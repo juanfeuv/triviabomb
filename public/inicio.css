@@ -3,15 +3,148 @@
         font-family: Arial;
         background-color: #3CB371;
     }
-    img {}
-    #aciertos {}
-    #jugadores {}
-    #pregunta {}
-    #respuesta_1 {}
-    #respuesta_2 {}
-    #respuesta_3 {}
-    #respuesta_3 {}
-    #timing {}
+    #jugadores h3 {
+        position: initial;
+        left: 0%;
+        top: 0%;
+    }
+    img {
+        position: absolute;
+        width: 20%;
+        height: 10%;
+        left: 1%;
+        top: 2%;
+        border-radius: 10px;
+    }
+    #aciertos {
+        position: absolute;
+        width: 20%;
+        right: 1%;
+        height: 5%;
+        top: 1%;
+        background-color: #A52A2A;
+        border-radius: 10px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #jugadores {
+        display: none;
+    }
+    #pregunta {
+        position: absolute;
+        width: 70%;
+        height: 11%;
+        top: 15%;
+        left: 15%;
+        background-color: #2F4F4F;
+        border-radius: 10px;
+        text-align: center;
+        border-color: black;
+        border-style: solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #respuesta_1 {
+        position: absolute;
+        width: 70%;
+        height: 8%;
+        top: 35%;
+        left: 15%;
+        background-color: #2F4F4F;
+        border-radius: 10px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-color: yellow;
+        border-style: solid;
+    }
+    #respuesta_1:active {
+        background-color: yellow;
+    }
+    #respuesta_2 {
+        position: absolute;
+        width: 70%;
+        height: 8%;
+        top: 48%;
+        left: 15%;
+        background-color: #2F4F4F;
+        border-radius: 10px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-color: blue;
+        border-style: solid;
+    }
+    #respuesta_2:active {
+        background-color: blue;
+    }
+    #respuesta_3 {
+        position: absolute;
+        width: 70%;
+        height: 8%;
+        top: 61%;
+        left: 15%;
+        background-color: #2F4F4F;
+        border-radius: 10px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-color: red;
+        border-style: solid;
+    }
+    #respuesta_3:active {
+        background-color: red;
+    }
+    #respuesta_4 {
+        position: absolute;
+        width: 70%;
+        height: 8%;
+        top: 74%;
+        left: 15%;
+        background-color: #2F4F4F;
+        border-radius: 10px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-color: orange;
+        border-style: solid;
+    }
+    #respuesta_4:active {
+        background-color: orange;
+    }
+    #timing {
+        position: absolute;
+        width: 20%;
+        right: 1%;
+        height: 5%;
+        top: 7%;
+        background-color: #A52A2A;
+        border-radius: 10px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #message {
+        position: absolute;
+        width: 50%;
+        left: 25%;
+        height: 10%;
+        top: 1%;
+        background-color: #A52A2A;
+        border-radius: 10px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 @media (min-width: 701px) and (max-width: 900px) {
@@ -19,14 +152,53 @@
         font-family: Arial;
         background-color: #3CB371;
     }
-    img {}
-    #aciertos {}
+    #jugadores h3 {
+        position: initial;
+        left: 0%;
+        top: 0%;
+    }
+    img {
+        position: absolute;
+        width: 7%;
+        height: 10%;
+        left: 1%;
+        top: 2%;
+        border-radius: 10px;
+    }
+    #aciertos {
+        position: absolute;
+        width: 8%;
+        right: 1%;
+        height: 5%;
+        top: 2%;
+        background-color: #A52A2A;
+        border-radius: 10px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     #jugadores {}
-    #pregunta {}
+    #pregunta {
+        position: absolute;
+        width: 40%;
+        height: 15%;
+        top: 15%;
+        display: block;
+        margin: 0 auto;
+        background-color: #2F4F4F;
+        border-radius: 10px;
+        text-align: center;
+        border-color: black;
+        border-style: solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     #respuesta_1 {}
     #respuesta_2 {}
     #respuesta_3 {}
-    #respuesta_3 {}
+    #respuesta_4 {}
     #timing {}
 }
 
@@ -34,6 +206,12 @@
     body {
         font-family: Arial;
         background-color: #3CB371;
+    }
+    #jugadores h3 {
+        position: initial;
+        left: 0%;
+        top: 0%;
+        text-align: center;
     }
     img {
         position: absolute;
@@ -64,10 +242,6 @@
         top: 15%;
         background-color: #A52A2A;
         border-radius: 10px;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
     #pregunta {
         position: absolute;
@@ -99,6 +273,9 @@
         border-color: yellow;
         border-style: solid;
     }
+    #respuesta_1:hover {
+        background-color: yellow;
+    }
     #respuesta_2 {
         position: absolute;
         width: 40%;
@@ -113,6 +290,9 @@
         align-items: center;
         border-color: blue;
         border-style: solid;
+    }
+    #respuesta_2:hover {
+        background-color: blue;
     }
     #respuesta_3 {
         position: absolute;
@@ -129,6 +309,9 @@
         border-color: red;
         border-style: solid;
     }
+    #respuesta_3:hover {
+        background-color: red;
+    }
     #respuesta_4 {
         position: absolute;
         width: 40%;
@@ -144,12 +327,28 @@
         border-color: orange;
         border-style: solid;
     }
+    #respuesta_4:hover {
+        background-color: orange;
+    }
     #timing {
         position: absolute;
         width: 8%;
         right: 10%;
         height: 5%;
         top: 2%;
+        background-color: #A52A2A;
+        border-radius: 10px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #message {
+        position: absolute;
+        width: 20%;
+        right: 4%;
+        height: 15%;
+        bottom: 15%;
         background-color: #A52A2A;
         border-radius: 10px;
         text-align: center;

@@ -3,39 +3,155 @@
 <head>
 	<title>TriviaBomb: inicio || {{name}}</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="inicio.css">
-	<link rel="icon" type="image/PNG" href="icono.png">
+	<link rel="stylesheet" type="text/css" href="../inicio.css">
+	<link rel="icon" type="image/PNG" href="../icono.png">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
 	<script src="socket.io/socket.io.js"></script>
-	<script type="text/javascript">
-		var socket = io();
-	</script>
+    <script>
+        var socket = io();
+		var date = new Date();
+		var timebanner = 6;
+		var time = 0;
+		var question, timing;
+		function checkAnswer (question, answer) {
+			socket.emit('checkAnswer', {
+				question,
+				answer
+			});
+		}
+
+		function clearFields() {
+			document.getElementById('message').innerHTML = '';
+			document.getElementById('pregunta').innerHTML = '';
+			document.getElementById('respuesta_1').innerHTML = '';
+			document.getElementById('respuesta_2').innerHTML = '';
+			document.getElementById('respuesta_3').innerHTML = '';
+			document.getElementById('respuesta_4').innerHTML = '';
+		}
+
+		function getres1 () {
+			var q = document.getElementById('pregunta').innerHTML;
+    		var ans = document.getElementById('respuesta_1').innerHTML;
+			checkAnswer(q, ans);
+			clearFields();
+		}
+
+		function getres2 () {
+			var q = document.getElementById('pregunta').innerHTML;
+			var ans = document.getElementById('respuesta_2').innerHTML;
+			checkAnswer(q, ans);
+			clearFields();
+		}
+
+		function getres3 () {
+			var q = document.getElementById('pregunta').innerHTML;
+			var ans = document.getElementById('respuesta_3').innerHTML;
+			checkAnswer(q, ans);
+			clearFields();
+		}
+
+		function getres4 () {
+			var q = document.getElementById('pregunta').innerHTML;
+			var ans = document.getElementById('respuesta_4').innerHTML;
+			checkAnswer(q, ans);
+			clearFields();
+		}
+
+		function getQuestion() {
+			socket.emit('statusQ', true);
+			socket.on('randomQuestion', question => {
+					document.getElementById('pregunta').innerHTML = question.titulo;
+					document.getElementById('respuesta_1').innerHTML = question.opcion1;
+					document.getElementById('respuesta_2').innerHTML = question.opcion2;
+					document.getElementById('respuesta_3').innerHTML = question.opcion3;
+					document.getElementById('respuesta_4').innerHTML = question.opcion4;
+					socket.emit('statusQ', false);
+				});
+		}
+
+		function timer () {
+			document.getElementById('timing').innerHTML = timebanner;
+			timebanner--;
+		}
+
+		function sleep(ms) {
+    		return new Promise(resolve => setTimeout(resolve, ms));
+		}
+
+		async function timeSleep() {
+    		await sleep(5000);
+		}
+
+		function loop(question) {
+			getQuestion();
+			time++;
+			timebanner = 6;
+		}
+
+		function intervalClearer() {
+			if (time === 10) {
+				clearInterval(question);
+			}
+			if (time === 11) {
+				clearInterval(timing);
+			}
+		}
+
+		function yaa() {
+			document.getElementById('message').innerHTML = 'YAAA!!';
+		}
+
+		function disparador() {
+			socket.on('reqJugadores', jugadores => {
+				var element = document.getElementById('reqJugadores');
+				element.innerHTML = jugadores;
+			});
+			document.getElementById('message').innerHTML = 'Hola {{name}}. '+'La partida Iniciará en 5 segundos';
+			
+			setTimeout(yaa, 5000);
+
+			question = setInterval(loop, 6000);
+			timing = setInterval(timer, 1000);
+			setInterval(intervalClearer, 6000);
+
+		}
+		socket.on('sendAnswer', res => {
+			if(res) {
+				socket.emit('updateScore', '{{name}}');
+				//document.getElementById('aciertos').innerHTML = puntuacion;
+				document.getElementById('message').innerHTML = 'Respuesta Correcta :)';
+			}
+			else{
+				document.getElementById('message').innerHTML = 'Respuesta Incorrecta :(';
+			}
+		});
+
+    </script>
+</head>
+<body onload="disparador()">
 	<img src="logo.png">
 	<div id="jugadores">
-		jugadores
+		<h3>Jugadores</h3>
+		<p>
+			<ul id="reqJugadores"></ul>
+		</p>
 	</div>
 	<div id="aciertos">
 		aciertos
 	</div>
 	<div id="pregunta">
-		preguntas
 	</div>
-	<div id="respuesta_1">
-		respuesta1
+	<div id="respuesta_1" onclick="getres1()">
 	</div>
-	<div id="respuesta_2">
-		respuesta2
+	<div id="respuesta_2" onclick="getres2()">
 	</div>
-	<div id="respuesta_3">
-		respuesta3
+	<div id="respuesta_3" onclick="getres3()">
 	</div>
-	<div id="respuesta_4">
-		respuesta4
+	<div id="respuesta_4" onclick="getres4()">
 	</div>
 	<div id="timing">
-		timing
+	</div>
+	<div id="message">
 	</div>
 </body>
 </html>
