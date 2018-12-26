@@ -12,9 +12,10 @@
     "dependencies": {
         "express-handlebars": "^3.0.0",
         "file-system": "^2.2.2",
-        "mongoose": "^5.4.0",
         "express": "*",
         "socket.io": "*",
-        "body-parser": "*"
+        "body-parser": "*",
+        "path": "*",
+        "http": "*"
     }
 }
